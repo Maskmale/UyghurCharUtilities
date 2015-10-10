@@ -49,9 +49,8 @@ include"../ExtendUyghurCharacters.class.php";
 
 3. ExtendUyghurCharacters دېگەن كىلاسنى ئىشلىتىپ ئۇيغۇرچە خەتنى كېڭەيتىلگەن رايونغا ئايلاندۇرساق بولىدۇ.
 
-$extendInstance = ExtendUyghurCharacters::getInstance();
-
 ```php
+$extendInstance = ExtendUyghurCharacters::getInstance();
 $extendedString = $extendInstance->getExtendedMessage($str);
 ```
 
