@@ -2,6 +2,13 @@
 
 ===================
 
+بۇ تۈر github تىكى شىرۋاجىم تەمىنلىگەن :
+
+https://github.com/xirwajim/UyghurCharUtilities
+
+پروگراممىغا ئاساسەن ئۆزگەرتىپ ئىشلەندى.
+
+===================
 
 # ئىشلىتىش ئۇسۇلى
 
@@ -54,6 +61,3 @@ $extendInstance = ExtendUyghurCharacters::getInstance();
 $extendedString = $extendInstance->getExtendedMessage($str);
 ```
 
-
-
-ئىشلىتىش جەھەتتە مەسىلىگە يولۇققاندا info@otkur.biz ئارقىلىق ئالاقىلەشسىڭىز بولىدۇ.
