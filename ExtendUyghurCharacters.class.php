@@ -4,7 +4,7 @@
  * Extend Uyghur characters Class for the mobile wap pages
  *
  * @author Alim Boyaq<boyaq@otkur.biz>
- * @version 1.0.1
+ * @version 1.0.2
  * @link 
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */
@@ -75,6 +75,7 @@ class ExtendUyghurCharacters
 	public function getExtendedMessage($text){
 		$this->ua  = $_SERVER['HTTP_USER_AGENT'];
 		if( $this->isUnsupportedBrowser() || $this->isUnsupportedSystem() || $this->isUnsupportedDevice() ){
+			$text = $this->replaceSymbles($text);
 			$uyghurCharUtilities = new UyghurCharUtilities();
 			return $uyghurCharUtilities->getUyPFStr($text);
 		}
@@ -84,6 +85,18 @@ class ExtendUyghurCharacters
 
 
 		
+	}
+
+	public function replaceSymbles($text){
+		if(empty($text)) return $text;
+		$text = preg_replace("/،/", ", ", $text);
+		$text = preg_replace("/ـ/", "", $text);
+		$text = preg_replace("/؟/", "?", $text);
+		$text = preg_replace("/؛/", ";", $text);
+		$text = preg_replace("/»/", ">>", $text);
+		$text = preg_replace("/«/", "<<", $text);
+		$text = preg_replace("/&amp;nbsp;/",' ', $text);
+		return $text;
 	}
 
 	protected function isUnsupportedBrowser(){
